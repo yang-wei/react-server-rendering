@@ -21,6 +21,7 @@ var APP = React.createClass({
         </head>
         <body>
           <Table products={PRODUCTS} />
+          <script src='public/bundle.js'></script>
         </body>
       </html>
     );
@@ -28,3 +29,9 @@ var APP = React.createClass({
 });
 
 module.exports = APP;
+
+if(typeof window !== 'undefined') {
+  window.onload = function() {
+    React.render(APP(), document);
+  }
+};

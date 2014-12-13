@@ -8,6 +8,7 @@ var APP = require('./app');
 
 var app = express();
 
+app.use('/public', express.static(__dirname + '/public'));
 app.get('/', function(req, res) {
   var markup = React.renderToString(APP());
   res.send(markup);
