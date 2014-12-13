@@ -1,0 +1,15 @@
+{
+  "name": "TDDReact",
+  "scripts": {
+    "build": "browserify -t reactify app.js -o public/bundle.js && node server.js"
+  },
+  "devDependencies": {
+    "browserify": "^7.0.0",
+    "reactify": "^0.17.1"
+  },
+  "dependencies": {
+    "express": "^4.10.6",
+    "node-jsx": "^0.12.4",
+    "react": "^0.12.1"
+  }
+}
