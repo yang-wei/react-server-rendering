@@ -1,3 +1,7 @@
+'use strict'
+
+var React = require('react');
+
 var ProductCategoryRow = React.createClass({
     render: function() {
         return (<tr><th colSpan="2">{this.props.category}</th></tr>);
@@ -22,7 +26,6 @@ var ProductRow = React.createClass({
 
 var ProductTable = React.createClass({
     render: function() {
-        console.log(this.props);
         var rows = [];
         var lastCategory = null;
         this.props.products.forEach(function(product) {
@@ -114,14 +117,4 @@ var FilterableProductTable = React.createClass({
     }
 });
 
-
-var PRODUCTS = [
-  {category: 'Sporting Goods', price: '$49.99', stocked: true, name: 'Football'},
-  {category: 'Sporting Goods', price: '$9.99', stocked: true, name: 'Baseball'},
-  {category: 'Sporting Goods', price: '$29.99', stocked: false, name: 'Basketball'},
-  {category: 'Electronics', price: '$99.99', stocked: true, name: 'iPod Touch'},
-  {category: 'Electronics', price: '$399.99', stocked: false, name: 'iPhone 5'},
-  {category: 'Electronics', price: '$199.99', stocked: true, name: 'Nexus 7'}
-];
-
-React.render(<FilterableProductTable products={PRODUCTS} />, document.body);
+module.exports = FilterableProductTable;

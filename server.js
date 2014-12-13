@@ -3,10 +3,14 @@
 require('node-jsx').install();
 
 var express = require('express');
+var React = require('react');
+var APP = require('./app');
+
 var app = express();
 
 app.get('/', function(req, res) {
-    res.send('Hello React');
+  var markup = React.renderToString(APP());
+  res.send(markup);
 });
 
 app.listen(9999);
