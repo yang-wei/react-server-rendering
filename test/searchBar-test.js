@@ -5,8 +5,8 @@ var React = require('react/addons');
 var TestUtils = React.addons.TestUtils;
 var SearchBarComp = require('../components/searchBar.js');
   
-describe('Search Bar', function() {
-  it('should rendered on DOM', function() {
+describe('Search Bar Test', function() {
+  it('Search bar should rendered on DOM', function() {
     
     var SearchBar = TestUtils.renderIntoDocument(<SearchBarComp />);
     
