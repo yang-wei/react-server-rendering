@@ -7,7 +7,7 @@ var ProductTableComp = require('../components/productTable.js');
 var ProductTable, PRODUCTS = [], table, th;
   
 describe('Product Table Test', function() {
-  before(function() {
+  beforeEach(function() {
 
     ProductTable = TestUtils.renderIntoDocument(<ProductTableComp products={PRODUCTS} />);
 
@@ -27,9 +27,10 @@ describe('Product Table Test', function() {
     assert.equal(th[0].getDOMNode().textContent, 'Name', "The first th is not 'Name'");
   })
 
-  after(function() {
+  afterEach(function() {
     // cleaning up 
     React.unmountComponentAtNode(table.getDOMNode().parent);
     React.unmountComponentAtNode(th.getDOMNode().parent);
   })
-})
+
+});
