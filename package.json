@@ -1,8 +1,8 @@
 {
   "name": "TDDReact",
   "scripts": {
-    "test": "jest",
-    "build": "browserify -t reactify app.js -o public/bundle.js && node server.js"
+    "build": "browserify -t reactify app.js -o public/bundle.js",
+    "start": "npm run build && node server.js"
   },
   "devDependencies": {
     "browserify": "^7.0.0",
@@ -12,9 +12,5 @@
     "express": "^4.10.6",
     "node-jsx": "^0.12.4",
     "react": "^0.12.1"
-  },
-  "jest" : {
-    "scriptPreprocessor": "<rootDir>/helper.js",
-    "unmockedModulePathPatterns": ["<rootDir>/node_modules/react"]
   }
 }
