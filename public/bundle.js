@@ -2,7 +2,7 @@
 'use strict';
 
 var React = require('react');
-var Table = require('./components/filterableProductTable.js'); 
+var Table = require('./components/table.js'); 
 
 var PRODUCTS = [
   {category: 'Sporting Goods', price: '$49.99', stocked: true, name: 'Football'},
@@ -37,16 +37,10 @@ if(typeof window !== 'undefined') {
   }
 };
 
-},{"./components/filterableProductTable.js":2,"react":149}],2:[function(require,module,exports){
+},{"./components/table.js":2,"react":149}],2:[function(require,module,exports){
 'use strict'
 
 var React = require('react');
-
-var ProductCategoryRow = React.createClass({displayName: 'ProductCategoryRow',
-    render: function() {
-        return (React.createElement("tr", null, React.createElement("th", {colSpan: "2"}, this.props.category)));
-    }
-});
 
 var ProductRow = React.createClass({displayName: 'ProductRow',
     render: function() {
@@ -63,6 +57,14 @@ var ProductRow = React.createClass({displayName: 'ProductRow',
         );
     }
 });
+
+
+var ProductCategoryRow = React.createClass({displayName: 'ProductCategoryRow',
+    render: function() {
+        return (React.createElement("tr", null, React.createElement("th", {colSpan: "2"}, this.props.category)));
+    }
+});
+
 
 var ProductTable = React.createClass({displayName: 'ProductTable',
     render: function() {
@@ -91,7 +93,6 @@ var ProductTable = React.createClass({displayName: 'ProductTable',
         );
     }
 });
-
 var SearchBar = React.createClass({displayName: 'SearchBar',
     handleChange: function() {
         this.props.onUserInput(
@@ -123,8 +124,7 @@ var SearchBar = React.createClass({displayName: 'SearchBar',
         );
     }
 });
-
-var FilterableProductTable = React.createClass({displayName: 'FilterableProductTable',
+module.exports = React.createClass({displayName: 'exports',
     getInitialState: function() {
         return {
             filterText: '',
@@ -156,8 +156,6 @@ var FilterableProductTable = React.createClass({displayName: 'FilterableProductT
         );
     }
 });
-
-module.exports = FilterableProductTable;
 
 },{"react":149}],3:[function(require,module,exports){
 // shim for using process in browser
