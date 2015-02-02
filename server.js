@@ -7,6 +7,7 @@ var React = require('react');
 var APP = require('./app');
 
 var app = express();
+var port = 9999;
 
 app.use('/public', express.static(__dirname + '/public'));
 app.get('/', function(req, res) {
@@ -14,5 +15,7 @@ app.get('/', function(req, res) {
   res.send(markup);
 });
 
-app.listen(9999);
+app.listen(port, function() {
+  console.log("Go to port " + port);
+});
 
