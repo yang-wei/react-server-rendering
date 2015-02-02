@@ -1,7 +1,7 @@
 'use strict';
 
 var React = require('react');
-var Table = require('./components/filterableProductTable.js'); 
+var Table = require('./components/table.js'); 
 
 var PRODUCTS = [
   {category: 'Sporting Goods', price: '$49.99', stocked: true, name: 'Football'},
